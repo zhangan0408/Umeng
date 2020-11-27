@@ -1,0 +1,30 @@
+{
+    "name": "umeng/notice",
+    "description": "友盟推送api",
+    "type": "project",
+    "require": {
+        "php": ">=5.64",
+        "symfony/polyfill-php72": "1.21.x-dev"
+    },
+    "authors": [
+        {
+            "name": "zhangan",
+            "email": "zhangan199348@gmail.com",
+            "role": "owner"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Umeng\\Notice\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
