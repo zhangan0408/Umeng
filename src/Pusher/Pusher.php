@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umeng\Notice\Pusher;
+namespace Carsdaq\Notice\Pusher;
 
 
 class Pusher

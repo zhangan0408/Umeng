@@ -1,10 +1,9 @@
 {
-    "name": "umeng/notice",
+    "name": "carsdaq/notice",
     "description": "友盟推送api",
     "type": "project",
     "require": {
-        "php": ">=5.64",
-        "symfony/polyfill-php72": "1.21.x-dev"
+        "php": ">=7.2"
     },
     "authors": [
         {
@@ -16,7 +15,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Umeng\\Notice\\": "src/"
+            "Carsdaq\\Notice\\": "src/"
         }
     },
     "minimum-stability": "dev",

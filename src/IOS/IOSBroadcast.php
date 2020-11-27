@@ -1,7 +1,7 @@
 <?php
-namespace Umeng\Notice\IOS;
+namespace Carsdaq\Notice\IOS;
 
-use Umeng\Notice\IOSNotification;
+use Carsdaq\Notice\IOSNotification;
 
 class IOSBroadcast extends IOSNotification {
 	function  __construct() {

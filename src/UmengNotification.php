@@ -1,8 +1,8 @@
 <?php
 
-namespace Umeng\Notice;
+namespace Carsdaq\Notice;
 
-use Umeng\Notice\Exception\UmengException;
+use Carsdaq\Notice\Exception\UmengException;
 
 abstract class UmengNotification {
 	// The host

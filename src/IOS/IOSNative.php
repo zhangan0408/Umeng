@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Umeng\Notice\IOS;
+namespace Carsdaq\Notice\IOS;
 
 
-use Umeng\Notice\Exception\UmengException;
-use Umeng\Notice\IOSNativeCode;
+use Carsdaq\Notice\Exception\UmengException;
+use Carsdaq\Notice\IOSNativeCode;
 
 class IOSNative extends IOSNativeCode
 {

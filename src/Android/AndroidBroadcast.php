@@ -1,7 +1,7 @@
 <?php
-namespace Umeng\Notice\Android;
+namespace Carsdaq\Notice\Android;
 
-use Umeng\Notice\AndroidNotification;
+use Carsdaq\Notice\AndroidNotification;
 
 class AndroidBroadcast extends AndroidNotification {
 	function  __construct() {

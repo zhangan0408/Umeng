@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umeng\Notice\Facades;
+namespace Carsdaq\Notice\Facades;
 
 
 use Illuminate\Support\Facades\Facade;

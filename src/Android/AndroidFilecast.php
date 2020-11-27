@@ -1,8 +1,8 @@
 <?php
-namespace Umeng\Notice\Android;
+namespace Carsdaq\Notice\Android;
 
-use Umeng\Notice\AndroidNotification;
-use Umeng\Notice\Exception\UmengException;
+use Carsdaq\Notice\AndroidNotification;
+use Carsdaq\Notice\Exception\UmengException;
 use Log;
 
 class AndroidFilecast extends AndroidNotification {

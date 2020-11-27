@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Umeng\Notice\Pusher;
+namespace Carsdaq\Notice\Pusher;
 
 
-use Umeng\Notice\Android\AndroidBroadcast;
-use Umeng\Notice\Android\AndroidCustomizedcast;
-use Umeng\Notice\Android\AndroidFilecast;
-use Umeng\Notice\Android\AndroidGroupcast;
-use Umeng\Notice\Android\AndroidListcast;
-use Umeng\Notice\Android\AndroidUnicast;
+use Carsdaq\Notice\Android\AndroidBroadcast;
+use Carsdaq\Notice\Android\AndroidCustomizedcast;
+use Carsdaq\Notice\Android\AndroidFilecast;
+use Carsdaq\Notice\Android\AndroidGroupcast;
+use Carsdaq\Notice\Android\AndroidListcast;
+use Carsdaq\Notice\Android\AndroidUnicast;
 
 class AndroidPusher extends Pusher
 {
@@ -19,7 +19,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendBroadcast($predefined = [], $extraField = []) {
         $brocast = new AndroidBroadcast();
@@ -47,7 +47,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendUnicast($device_tokens = '', $predefined= [], $extraField = []) {
         $unicast = new AndroidUnicast();
@@ -75,7 +75,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendListcast($device_tokens = '', $predefined= [], $extraField = []){
         $listcast = new AndroidListcast();
@@ -103,7 +103,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendFilecast($fileContents = '', $predefined= [],$extraField = []) {
         $filecast = new AndroidFilecast();
@@ -132,7 +132,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendGroupcast($filter = [], $predefined= [], $extraField = []) {
         $groupcast = new AndroidGroupcast();
@@ -161,7 +161,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendCustomizedcast($alias = '', $alias_type = '', $predefined= [], $extraField = []) {
         $customizedcast = new AndroidCustomizedcast();
@@ -191,7 +191,7 @@ class AndroidPusher extends Pusher
      * @param array $predefined
      * @param array $extraField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendCustomizedcastFileId($file_contents = '', $predefined= [], $extraField = []) {
         $customizedcast = new AndroidCustomizedcast();

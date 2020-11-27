@@ -1,9 +1,9 @@
 <?php
 
-namespace  Umeng\Notice;
+namespace  Carsdaq\Notice;
 
-use Umeng\Notice\UmengNotification;
-use Umeng\Notice\Exception\UmengException;
+use Carsdaq\Notice\UmengNotification;
+use Carsdaq\Notice\Exception\UmengException;
 use Log;
 
 abstract class AndroidNotification extends UmengNotification {

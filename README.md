@@ -2,7 +2,7 @@
 
 ## 安装
 ```php
-    composer reuqire umeng/notice   
+    composer reuqire Carsdaq/notice   
 ```
   
 ## Laravel 5.* 配置
@@ -10,14 +10,14 @@
 
 ```php
     'provider' => [
-       Umeng\Notice\UmengServiceProvider::class, 
+       Carsdaq\Notice\UmengServiceProvider::class, 
     ],
 ```
 配置alias:
 
 ```php
     'aliases' => [
-        'Umeng' => Umeng\Notice\Facades\Umeng::class,
+        'Umeng' => Carsdaq\Notice\Facades\Umeng::class,
     ],
 ```
 
@@ -34,13 +34,13 @@
 打开bootstrap目录下的app.php文件,注册provider:
 
 ```php
-    $app->register(Umeng\Notice\UmengServiceProvider::class);
+    $app->register(Carsdaq\Notice\UmengServiceProvider::class);
 ```
 
 配置alias:
 
 ```php
-    class_alias('Umeng\Notice\Facades\Umeng','Umeng');
+    class_alias('Carsdaq\Notice\Facades\Umeng','Umeng');
 ```
 
 生成配置文件:

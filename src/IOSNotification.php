@@ -1,8 +1,8 @@
 <?php
 
-namespace  Umeng\Notice;
-use Umeng\Notice\UmengNotification;
-use Umeng\Notice\Exception\UmengException;
+namespace  Carsdaq\Notice;
+use Carsdaq\Notice\UmengNotification;
+use Carsdaq\Notice\Exception\UmengException;
 use Log;
 
 abstract class IOSNotification extends UmengNotification {

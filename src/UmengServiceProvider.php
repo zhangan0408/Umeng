@@ -1,9 +1,9 @@
 <?php
 
-namespace Umeng\Notice;
+namespace Carsdaq\Notice;
 
 use Illuminate\Support\ServiceProvider;
-use Umeng\Notice\Pusher\UmengPusher;
+use Carsdaq\Notice\Pusher\UmengPusher;
 
 class UmengServiceProvider extends ServiceProvider
 {

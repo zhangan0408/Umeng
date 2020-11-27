@@ -1,8 +1,8 @@
 <?php
-namespace Umeng\Notice\IOS;
+namespace Carsdaq\Notice\IOS;
 
-use Umeng\Notice\IOSNotification;
-use Umeng\Notice\Exception\UmengException;
+use Carsdaq\Notice\IOSNotification;
+use Carsdaq\Notice\Exception\UmengException;
 use Log;
 
 class IOSCustomizedcast extends IOSNotification {

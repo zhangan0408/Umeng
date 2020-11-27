@@ -1,6 +1,6 @@
 <?php
 
-namespace Umeng\Notice\Exception;
+namespace Carsdaq\Notice\Exception;
 
 use Exception;
 

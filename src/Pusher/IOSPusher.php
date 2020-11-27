@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Umeng\Notice\Pusher;
+namespace Carsdaq\Notice\Pusher;
 
 
-use Umeng\Notice\IOS\IOSBroadcast;
-use Umeng\Notice\IOS\IOSCustomizedcast;
-use Umeng\Notice\IOS\IOSFilecast;
-use Umeng\Notice\IOS\IOSGroupcast;
-use Umeng\Notice\IOS\IOSListcast;
-use Umeng\Notice\IOS\IOSNative;
-use Umeng\Notice\IOS\IOSUnicast;
+use Carsdaq\Notice\IOS\IOSBroadcast;
+use Carsdaq\Notice\IOS\IOSCustomizedcast;
+use Carsdaq\Notice\IOS\IOSFilecast;
+use Carsdaq\Notice\IOS\IOSGroupcast;
+use Carsdaq\Notice\IOS\IOSListcast;
+use Carsdaq\Notice\IOS\IOSNative;
+use Carsdaq\Notice\IOS\IOSUnicast;
 
 class IOSPusher extends Pusher
 {
@@ -20,7 +20,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendBroadcast($predefined= [], $customField= []) {
         $brocast = new IOSBroadcast();
@@ -47,7 +47,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendUnicast($device_tokens = '', $predefined= [], $customField= []) {
         $unicast = new IOSUnicast();
@@ -74,7 +74,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendListcast($device_tokens = '', $predefined= [], $customField= []) {
         $listcast = new IOSListcast();
@@ -100,7 +100,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendFilecast($fileContents = '', $predefined= [], $customField= []) {
         $filecast = new IOSFilecast();
@@ -128,7 +128,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendGroupcast($filter = [], $predefined= [], $customField= []) {
             $groupcast = new IOSGroupcast();
@@ -157,7 +157,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendCustomizedcast($alias = '', $alias_type = '', $predefined= [], $customField= []) {
         $customizedcast = new IOSCustomizedcast();
@@ -187,7 +187,7 @@ class IOSPusher extends Pusher
      * @param array $predefined
      * @param array $customField
      * @return mixed
-     * @throws \Umeng\Notice\Exception\UmengException
+     * @throws \Carsdaq\Notice\Exception\UmengException
      */
     public function sendCustomizedcastFileId($file_contents = '', $predefined= [], $customField = []) {
         $customizedcast = new IOSCustomizedcast();
