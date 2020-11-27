@@ -12,8 +12,8 @@ class UmengPusher
         $androidAppKey = config('umeng.android_app_key');
         $androidAppMasterSecret = config('umeng.android_app_master_secret');
 
-        $this->android = new AndroidPusher($androidAppKey, $androidAppMasterSecret);
-        $this->ios = new IOSPusher($iosAppKey, $iosAppMasterSecret);
+        $this->android = AndroidPusher::getInstance($androidAppKey, $androidAppMasterSecret);
+        $this->ios = IOSPusher::getInstance($iosAppKey, $iosAppMasterSecret);
     }
 
     public function android(){

@@ -15,6 +15,13 @@ use Carsdaq\Notice\IOS\IOSUnicast;
 class IOSPusher extends Pusher
 {
 
+    public function __construct($appKey, $masterSecret)
+    {
+        parent::__construct();
+        $this->appKey = $appKey;
+        $this->appMasterSecret = $masterSecret;
+    }
+
     /**
      * IOS广播
      * @param array $predefined
@@ -208,12 +215,5 @@ class IOSPusher extends Pusher
         }
 
         return $customizedcast->send();
-    }
-
-    public function sendNativeCodeMsg($data = []) {
-        $nativeCode = new IOSNative($data);
-        $nativeCode->setParam();
-        $nativeCode->isComplete();
-        return $nativeCode->send();
     }
 }

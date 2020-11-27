@@ -2,7 +2,7 @@
 
 ## 安装
 ```php
-    composer reuqire Carsdaq/notice   
+    composer reuqire Carsdaq/notice --dev    
 ```
   
 ## Laravel 5.* 配置
@@ -77,7 +77,17 @@ IOS用法:
     Umeng::ios()->sendUnicast($device_token,$predefined,$customField); //单播
     
 ```
+IOS原生推送用法:
 
+```php
+    
+    use Umeng;
+    
+    $data = array('alert' => 'ios alert' ,...);
+   
+    Umeng::ios()->sendUnicast($device_token,$predefined,$customField); //单播
+    
+```
 ## Api
 
 说明: Android API跟 IOS一样
