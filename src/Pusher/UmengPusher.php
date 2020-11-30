@@ -32,10 +32,10 @@ class UmengPusher
     }
 
     public static function android(){
-        return self::android();
+        return self::$android;
     }
 
     public static function ios(){
-        return self::ios();
+        return self::$ios;
     }
 }
