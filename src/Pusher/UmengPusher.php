@@ -4,8 +4,8 @@ namespace Carsdaq\Notice\Pusher;
 
 class UmengPusher
 {
-    private static $android = null;
-    private static $ios = null;
+    protected static $android = null;
+    protected static $ios = null;
     protected static $androidAppKey;
     protected static $androidAppMasterSecret;
     protected static $iosAppKey;
