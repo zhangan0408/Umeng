@@ -14,13 +14,6 @@ use Carsdaq\Notice\Android\AndroidUnicast;
 class AndroidPusher extends Pusher
 {
 
-    public function __construct($appKey, $masterSecret)
-    {
-        parent::__construct();
-        $this->appKey = $appKey;
-        $this->appMasterSecret = $masterSecret;
-    }
-
     /**
      * Android广播
      * @param array $predefined

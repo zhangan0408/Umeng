@@ -4,17 +4,26 @@ namespace Carsdaq\Notice\Pusher;
 
 class UmengPusher
 {
-    protected static $android = null;
-    protected static $ios = null;
     protected static $androidAppKey;
     protected static $androidAppMasterSecret;
     protected static $iosAppKey;
     protected static $iosAppMasterSecret;
-    public function __construct() {
+    private static $instance;
+    private function __construct() {
         $this->setAppParam();
     }
 
-    protected function setAppParam() {
+
+    public static function getInstance($appKey, $masterSecret) {
+        if ( is_null( self::$instance) ) {
+            self::$instance = new self($appKey,$masterSecret);
+        }
+        return self::$instance;
+    }
+
+    private function __clone(){}
+
+    private function setAppParam() {
         if (config('umeng.production_mode')) {
 
             self::$iosAppKey = env("MASTER_IOS_APP_KEY");
@@ -31,11 +40,11 @@ class UmengPusher
         self::$ios= IOSPusher::getInstance(self::$iosAppKey, self::$iosAppMasterSecret);
     }
 
-    public static function android(){
-        return self::$android;
+    public function android(){
+        return new AndroidPusher(self::$androidAppKey, self::$androidAppMasterSecret);
     }
 
-    public static function ios(){
-        return self::$ios;
+    public function ios(){
+        return new IOSPusher(self::$iosAppKey, self::$iosAppMasterSecret);
     }
 }

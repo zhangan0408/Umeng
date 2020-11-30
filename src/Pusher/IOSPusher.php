@@ -15,13 +15,6 @@ use Carsdaq\Notice\IOS\IOSUnicast;
 class IOSPusher extends Pusher
 {
 
-    public function __construct($appKey, $masterSecret)
-    {
-        parent::__construct();
-        $this->appKey = $appKey;
-        $this->appMasterSecret = $masterSecret;
-    }
-
     /**
      * IOS广播
      * @param array $predefined
