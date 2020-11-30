@@ -37,11 +37,11 @@ abstract class IOSNativeCode
 
     function setParam() {
         foreach ($this->data as $key => $value) {
-            if (is_null($value)) {
-                \Log::error($key . " is NULL!");
-                throw new UmengException($key . " is NULL!");
+            if (empty($value)) {
+                \Log::error($key . " is empty!");
+                throw new UmengException($key . " is empty!");
             }
-            if (is_array($key,$this->keys)) {
+            if (in_array($key,$this->keys)) {
                 $this->$key = $value;
             }
         }
@@ -63,9 +63,9 @@ abstract class IOSNativeCode
 
     private function checkArrayValues($arr) {
         foreach ($arr as $key => $value) {
-            if (is_null($value)){
-                \Log::error("Caught Umeng exception: ".$key . " is NULL!");
-                throw new UmengException($key . " is NULL!");
+            if (empty($value)){
+                \Log::error("Caught Umeng exception: ".$key . " is empty!");
+                throw new UmengException($key . " is empty!");
             }
             else if (is_array($value)) {
                 $this->checkArrayValues($value);
@@ -105,14 +105,14 @@ abstract class IOSNativeCode
         // Encode the payload as JSON
         $payload = json_encode($body);
 
-        if (is_array($this->deviceToken) && !is_null($this->deviceToken)) {
+        if (is_array($this->deviceToken) && !empty($this->deviceToken)) {
             if (count($this->deviceToken) <= 0) {
                 \Log::error("传递deviceToke为空");
                  throw new UmengException("传递deviceToke为空");
             }
             foreach ($this->deviceToken as $value) {
                 // Build the binary notification
-                $msg = chr(0) . pack('n', 32) . pack('H*', str_replace(' ','',$this->deviceToken)) . pack('n', strlen($payload)) . $payload;
+                $msg = chr(0) . pack('n', 32) . pack('H*', str_replace(' ','',$value)) . pack('n', strlen($payload)) . $payload;
 
                 // Send it to the server
                 $result = fwrite($fp, $msg, strlen($msg));
