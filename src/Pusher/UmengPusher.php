@@ -6,14 +6,29 @@ class UmengPusher
 {
     private static $android = null;
     private static $ios = null;
+    protected static $androidAppKey;
+    protected static $androidAppMasterSecret;
+    protected static $iosAppKey;
+    protected static $iosAppMasterSecret;
     public function __construct() {
-        $iosAppKey = config('umeng.ios_app_key');
-        $iosAppMasterSecret = config('umeng.ios_app_master_secret');
-        $androidAppKey = config('umeng.android_app_key');
-        $androidAppMasterSecret = config('umeng.android_app_master_secret');
+        $this->setAppParam();
+    }
 
-        self::$android = AndroidPusher::getInstance($androidAppKey, $androidAppMasterSecret);
-        self::$ios= IOSPusher::getInstance($iosAppKey, $iosAppMasterSecret);
+    protected function setAppParam() {
+        if (config('umeng.production_mode')) {
+
+            self::$iosAppKey = env("MASTER_IOS_APP_KEY");
+            self::$iosAppMasterSecret = env("MASTER_IOS_APP_SECRET");
+            self::$androidAppKey = env("MASTER_IOS_APP_KEY");
+            self::$androidAppMasterSecret = env("MASTER_IOS_APP_SECRET");
+        } else {
+            self::$iosAppKey = env("DEV_IOS_APP_KE");
+            self::$iosAppMasterSecret = env("DEV_IOS_APP_SECRET");
+            self::$androidAppKey = env("DEV_IOS_APP_KEY");
+            self::$androidAppMasterSecret = env("DEV_IOS_APP_SECRET");
+        }
+        self::$android = AndroidPusher::getInstance(self::$androidAppKey, self::$androidAppMasterSecret);
+        self::$ios= IOSPusher::getInstance(self::$iosAppKey, self::$iosAppMasterSecret);
     }
 
     public static function android(){

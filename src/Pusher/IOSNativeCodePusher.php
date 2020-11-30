@@ -8,7 +8,11 @@ use Carsdaq\Notice\IOS\IOSNative;
 
 class IOSNativeCodePusher extends Pusher
 {
-    public $ios_pem_mode;
+    protected $ios_pem_mode;
+
+    protected $dev_ios_pem; // 测试环境证书
+
+    protected $master_ios_pem; // 正式环境证书
 
     public function __construct()
     {
@@ -18,18 +22,21 @@ class IOSNativeCodePusher extends Pusher
     /**
      * 原生IOS推送
      * @param array $data
+     * @param array $pemPathArr
      * @return bool
      * @throws \Carsdaq\Notice\Exception\UmengException
      */
-    public function sendNativeCodeMsg($data = []) {
+    public function sendNativeCodeMsg($data = [],$pemPathArr = []) {
         $nativeCode = new IOSNative($data);
         $this->ios_pem_mode = config('umeng.pem_mode');
         $nativeCode->setParam();
         $nativeCode->setProductionMode($this->ios_pem_mode);
         if ($this->ios_pem_mode) { // 正式
-            $nativeCode->setPathPem(config('umeng.master_ios_pem'));
+            $pemPath = isset($pemPathArr['master'])? $pemPathArr['master']: '';
+            $nativeCode->setPathPem($pemPath);
         } else { // 测试
-            $nativeCode->setPathPem(config('umeng.dev_ios_pem'));
+            $pemPath = isset($pemPathArr['dev'])? $pemPathArr['dev']: '';
+            $nativeCode->setPathPem($pemPath);
         }
         $nativeCode->isComplete();
         return $nativeCode->send();

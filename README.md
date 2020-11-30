@@ -53,6 +53,11 @@
 
 ## 用法
 
+###注意：
+友盟的推送 参数需要在.env文件配置 正式测试环境的 key 和 secret ，友盟 UMENG_MODE true为正式环境  false为测试环境；
+IOS原生 pem_mode 为true正式证书  false测试证书 
+ 
+
 Android用法:
 ```php
 
@@ -84,8 +89,13 @@ IOS原生推送用法:
     use Umeng;
     
     $data = array('alert' => 'ios alert' ,...);
+    // 证书路径
+    $pemPathArr = [
+        'dev' => '测试证书路径'，
+        'master' => '证书证书路径'
+    ]
    
-    Umeng::ios()->sendUnicast($device_token,$predefined,$customField); //单播
+    Umeng::ios()->sendNativeCodeMsg($device_token,$predefined,$customField); //单播
     
 ```
 ## Api
