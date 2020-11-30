@@ -14,7 +14,9 @@ class Pusher
     public static $instance;
 
 
-    public function __construct(){
+    public function __construct($appKey,$appMasterSecret){
+        $this->appKey = $appKey;
+        $this->appMasterSecret = $appMasterSecret;
         $this->timestamp = strval(time());
         $this->production_mode = config('umeng.production_mode');
     }

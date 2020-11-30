@@ -8,11 +8,10 @@ use Carsdaq\Notice\IOS\IOSNative;
 
 class IOSNativeCodePusher extends Pusher
 {
-    private $iosNativeCode = null;
 
     public function __construct()
     {
-
+        parent::__construct();
     }
 
     /**

@@ -124,7 +124,7 @@ abstract class IOSNativeCode
 
             if (!$result) {
                 \Log::error("消息发送失败：".$result."错误机型：".$this->deviceToken);
-                 throw new UmengException("证书链接失败：".$result);
+                 throw new UmengException("写入信息失败：".$result);
             }
         }
 
