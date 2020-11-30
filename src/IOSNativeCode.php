@@ -24,11 +24,10 @@ abstract class IOSNativeCode
         'deviceToken' => null,
         'passphrase' => null,
         'message' => null,
-        'pemPath' => null,
-        'production_mode' => null
+        'pemPath' => null
     ];
 
-    protected $keys = ['deviceToken','passphrase','message','pemPath','production_mode'];
+    protected $keys = ['deviceToken','passphrase','message'];
 
     public function __construct()
     {
@@ -46,6 +45,14 @@ abstract class IOSNativeCode
                 $this->$key = $value;
             }
         }
+    }
+
+    function setProductionMode($production_mode) {
+        $this->production_mode = $production_mode;
+    }
+
+    function setPathPem($pathPem) {
+        $this->pemPath = $pathPem;
     }
 
     function isComplete() {
