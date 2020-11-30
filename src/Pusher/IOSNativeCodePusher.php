@@ -6,17 +6,13 @@ namespace Carsdaq\Notice\Pusher;
 
 use Carsdaq\Notice\IOS\IOSNative;
 
-class IOSNativeCodePusher extends Pusher
+class IOSNativeCodePusher
 {
     protected $ios_pem_mode;
 
-    protected $dev_ios_pem; // 测试环境证书
-
-    protected $master_ios_pem; // 正式环境证书
-
     public function __construct()
     {
-        parent::__construct();
+
     }
 
     /**
