@@ -14,9 +14,9 @@ class UmengPusher
     }
 
 
-    public static function getInstance($appKey, $masterSecret) {
+    public static function getInstance() {
         if ( is_null( self::$instance) ) {
-            self::$instance = new self($appKey,$masterSecret);
+            self::$instance = new self();
         }
         return self::$instance;
     }
@@ -36,8 +36,6 @@ class UmengPusher
             self::$androidAppKey = env("DEV_IOS_APP_KEY");
             self::$androidAppMasterSecret = env("DEV_IOS_APP_SECRET");
         }
-        self::$android = AndroidPusher::getInstance(self::$androidAppKey, self::$androidAppMasterSecret);
-        self::$ios= IOSPusher::getInstance(self::$iosAppKey, self::$iosAppMasterSecret);
     }
 
     public function android(){
