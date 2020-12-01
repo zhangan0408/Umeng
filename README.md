@@ -63,10 +63,10 @@ Android用法:
 
     use Umeng;
     
-    $device_token = 'xxxx';
-    $predefined = array('ticker' => 'android ticker' ,...);
+    $device_token = 'xxxx'; // 设备号
+    $predefined = ['ticker'=> '通知栏提示','title'=>'通知标题','text'=>'测试测试测试','after_open'=>'go_app'];;
     $extraField = array(); //other extra filed
-    Umeng::android()->sendUnicast($device_token,$predefined,$extraField); //单播
+    UmengPusher::getInstance()->android()->sendUnicast($device_token,$predefined,$extraField); //单播
 
 ```
 
@@ -76,26 +76,29 @@ IOS用法:
     
     use Umeng;
     
-    $device_token = 'xxxx';
-    $predefined = array('alert' => 'ios alert' ,...);
-    $customField = array(); //other custom filed
-    Umeng::ios()->sendUnicast($device_token,$predefined,$customField); //单播
+    $device_token = 'xxxx'; // 设备号
+    $predefined = ['ticker'=> '通知栏提示','title'=>'通知标题','text'=>'测试测试测试','after_open'=>'go_app'];;
+    $extraField = array(); //other extra filed
+    UmengPusher::getInstance()->ios()->sendUnicast($device_token,$predefined,$extraField); //单播
     
 ```
 IOS原生推送用法:
 
 ```php
     
-    use Umeng;
+     $iosPush = new IOSNativeCodePusher();
+            $data = [
+                'deviceToken'=>'9644e180a71d571731b1ddd99983fd8a4c8b7f981513e35e2f3e5c830ddc3f06', // 设备号
+                'passphrase'=> 'zhangtp', // pem密码短语
+                'message'=>'测试测试测试' // 消息
+            ];
     
-    $data = array('alert' => 'ios alert' ,...);
-    // 证书路径
-    $pemPathArr = [
-        'dev' => '测试证书路径'，
-        'master' => '证书证书路径'
-    ]
-   
-    Umeng::ios()->sendNativeCodeMsg($device_token,$predefined,$customField); //单播
+            $pemPath = [
+                'dev' => '', // 测试pem
+                'master'=> '' // 正式pem
+            ];
+    
+            $data =$iosPush->sendNativeCodeMsg($data,$pemPath);
     
 ```
 ## Api
